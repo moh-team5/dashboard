@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
+   integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+   crossorigin=""/>
+
+<div class="row">
+  <div class="col-md-9" style="padding: 10px;">
+    <form class="form-inline">
+      <div class="form-group mx-sm-3">
+        <label for="origin" class="sr-only">Origin</label>
+        <input class="form-control" id="origin" placeholder="Origin">
+      </div>
+      <div class="form-group mx-sm-3">
+        <label for="destination" class="sr-only">Destination</label>
+        <input class="form-control" id="destination" placeholder="Destination">
+      </div>
+      <button type="submit" class="btn btn-primary">Go</button>
+    </form>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-3">
+
+  </div>
+
+  <div class="col-md-6">
+    <div id="mapid"></div>
+  </div>
+
+  <div class="col-md-3">
+    <%= render "charts" %>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
+   integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
+   crossorigin=""></script>
+

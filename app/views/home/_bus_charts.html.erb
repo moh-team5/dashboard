@@ -1,0 +1,150 @@
+<style>
+  .busPieChart {
+    height: 50px;
+    text-align: left;
+  }
+</style>
+
+<div class="col-lg-12">
+  <h2>BUS</h2>
+</div>
+
+<div class="col-lg-6">
+  ROUTE OPTIONS
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Alternative Routes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><h3>30/205 + 88</h3></td>
+      </tr>
+      <tr>
+        <td><h3>30/205 + 453</h3></td>
+      </tr>
+      <tr>
+        <td><h3>30/205</h3></td>
+      </tr>
+      <tr>
+        <td><h3>73</h3></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="col-lg-6">
+  OCCUPANCIES
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th scope="col">Route Number</th>
+        <th scope="col">Occupancy Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><h3>30/205</h3></td>
+        <td><div class="busPieChart" id="busChartContainer1"></div></td>
+      </tr>
+      <tr>
+        <td><h3>88</h3></td>
+        <td><div class="busPieChart" id="busChartContainer2"></div></td>
+      </tr>
+      <tr>
+        <td><h3>453</h3></td>
+        <td><div class="busPieChart" id="busChartContainer3"></div></td>
+      </tr>
+      <tr>
+        <td><h3>73</h3></td>
+        <td><div class="busPieChart" id="busChartContainer4"></div></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- <div class="col-lg-3">
+</div>
+
+<div class="col-lg-3">
+</div>
+
+<div class="col-lg-3">
+  <div id="busChartContainer3" style="height: 200px;"></div>
+</div>
+
+<div class="col-lg-3">
+  <div id="busChartContainer4" style="height: 200px;"></div>
+</div> -->
+
+<script>
+  var chart1 = new CanvasJS.Chart("busChartContainer1", {
+    animationEnabled: true,
+    title: {
+      // text: "30/205"
+    },
+    data: [{
+      type: "pie",
+      startAngle: 240,
+      yValueFormatString: "##0\"%\"",
+      valueFormatString: "{y}",
+      dataPoints: [
+        {y: 80, label: "Occupied", color: "red"},
+        {y: 20, label: "Unoccupied", color: "green"}
+      ]
+    }]
+  });
+  chart1.render();
+
+  var chart2 = new CanvasJS.Chart("busChartContainer2", {
+    animationEnabled: true,
+    title: {
+      // text: "88"
+    },
+    data: [{
+      type: "pie",
+      startAngle: 240,
+      yValueFormatString: "##0\"%\"",
+      dataPoints: [
+        {y: 80, label: "Occupied", color: "red"},
+        {y: 20, label: "Unoccupied", color: "green"}
+      ]
+    }]
+  });
+  chart2.render();
+
+  var chart3 = new CanvasJS.Chart("busChartContainer3", {
+    animationEnabled: true,
+    title: {
+      // text: "453"
+    },
+    data: [{
+      type: "pie",
+      startAngle: 240,
+      yValueFormatString: "##0\"%\"",
+      dataPoints: [
+        {y: 60, label: "Occupied", color: "red"},
+        {y: 40, label: "Unoccupied", color: "green"}
+      ]
+    }]
+  });
+  chart3.render();
+
+  var chart4 = new CanvasJS.Chart("busChartContainer4", {
+    animationEnabled: true,
+    title: {
+      // text: "73"
+    },
+    data: [{
+      type: "pie",
+      startAngle: 240,
+      yValueFormatString: "##0\"%\"",
+      dataPoints: [
+        {y: 80, label: "Occupied", color: "red"},
+        {y: 20, label: "Unoccupied", color: "green"}
+      ]
+    }]
+  });
+  chart4.render();
+</script>
