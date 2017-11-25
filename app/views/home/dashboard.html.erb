@@ -2,6 +2,11 @@
   .canvasjs-chart-credit {
     display: none;
   }
+
+  #bus_charts, #tube_charts {
+    /*display: none;*/
+    visibility: hidden;
+  }
 </style>
 
 <div class="container-fluid">
@@ -36,11 +41,11 @@
     </div>
 
     <div class="col-lg-6">
-      <div class="row">
+      <div id="tube_charts" class="row">
         <%= render "tube_charts" %>
       </div>
 
-      <div class="row">
+      <div id="bus_charts" class="row">
         <%= render "bus_charts" %>
       </div>        
     </div>
@@ -125,6 +130,7 @@
   };
 
   AutocompleteDirectionsHandler.prototype.route = function() {
+
     if (!this.originPlaceId || !this.destinationPlaceId) {
       return;
     }
@@ -141,6 +147,9 @@
         window.alert('Directions request failed due to ' + status);
       }
     });
+
+    $("#tube_charts").css("visibility", "visible");
+    $("#bus_charts").css("visibility", "visible");
   };
 
 </script>
